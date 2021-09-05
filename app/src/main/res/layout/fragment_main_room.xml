@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".fragments.RoomFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+        <RelativeLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/allRoomsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All rooms"
+                android:insetTop="0dp"
+                style="@style/MyButton"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:insetBottom="0dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textAllCaps="false"
+                android:drawableLeft="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:layout_marginStart="15dp"
+                android:textSize="17dp"/>
+
+            <ImageButton
+                android:id="@+id/notificationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/notifications_24"
+                android:layout_marginEnd="20dp"
+                android:layout_toStartOf="@+id/profileBtn"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profileBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                app:cardCornerRadius="17dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/humanicon"/>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/roomSpeakers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/CurrentRoomClosed"
+            android:backgroundTint="#ffffff"
+            android:layout_below="@+id/topBar">
+            <RelativeLayout
+                android:id="@+id/roomDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/currentRoomClub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="22dp"
+                    android:drawableEnd="@drawable/home_icon_24"
+                    android:fontFamily="@font/nudmotoya_maru"
+                    android:text="Club name  "
+                    android:textAlignment="center"
+                    android:textColor="@color/TextColorMain"
+                    android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/currentRoomName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Room Name"
+                    android:fontFamily="@font/nudmotoya_maru"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="13dp"
+                    android:layout_below="@+id/currentRoomClub"
+                    android:textColor="@color/TextColorMain"
+                    android:textSize="19sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/usersView"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/currentRoomName"
+                    android:layout_margin="10dp"
+                    tools:itemCount="20"
+                    app:spanCount="3"
+                    tools:listitem="@layout/user_item">
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/userCardView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:translationZ="10dp"
+        android:layout_margin="2.5dp"
+        android:padding="10dp"
+        app:strokeColor="#D5CFB9"
+        app:cardCornerRadius="45dp">
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/humanicon"/>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <ImageView
+        android:id="@+id/noMicImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:foregroundGravity="left"
+        android:layout_above="@+id/userName"
+        android:layout_alignRight="@id/userCardView"
+        android:layout_alignBottom="@id/userCardView"
+        android:src="@drawable/nomic"
+        android:translationZ="20dp" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userCardView"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/nudmotoya_maru"
+        android:text="User name"
+        android:textColor="@color/TextColorMain"
+        android:textSize="15sp" />
+</RelativeLayout>
